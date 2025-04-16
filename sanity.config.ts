@@ -1,7 +1,7 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 // visionTool 已移除以避免部署錯誤
-import { schemaTypes } from './schemaTypes/schemaTypes'
+import { schemaTypes } from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
