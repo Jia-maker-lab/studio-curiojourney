@@ -1,15 +1,16 @@
 import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-// visionTool 已移除以避免部署錯誤
+import {deskTool} from 'sanity/desk'
 import { schemaTypes } from './schemaTypes'
+import {defaultStructure} from './structure'
 
 export default defineConfig({
   name: 'default',
   title: 'CurioJourney',
+  basePath: '/studio',
 
   projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
   dataset: process.env.SANITY_STUDIO_DATASET!,
-  plugins: [structureTool()],
+  plugins: [deskTool({ structure: defaultStructure })],
 
   server: {
     port: parseInt(process.env.PORT, 10) || 3333,
